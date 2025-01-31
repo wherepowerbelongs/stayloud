@@ -37,50 +37,63 @@
         <div id="result">
             <!-- This is where the voting record will be displayed -->
         </div>
-    </div>
 
-    <!-- Fetch Topics Script -->
-    <script>
-        async function fetchAndPopulateTopics() {
-            try {
-                // Fetch topics from topics.json
-                let jsonResponse = await fetch("topics.json");
-                let localData = await jsonResponse.json();
+        <!-- Fetch Topics Script -->
+        <script>
+            async function fetchAndPopulateTopics() {
+                document.getElementById("loading").style.display = 'block'; // Show loading
 
-                // Populate category dropdown
-                const categoryDropdown = document.getElementById("category");
-                localData.topics.forEach(topic => {
-                    let option = document.createElement("option");
-                    option.value = topic.category;
-                    option.textContent = topic.category;
-                    categoryDropdown.appendChild(option);
-                });
-
-                // Event listener for category change
-                categoryDropdown.addEventListener('change', function () {
-                    const selectedCategory = categoryDropdown.value;
-                    const topicDropdown = document.getElementById("topic");
-                    topicDropdown.innerHTML = '<option value="">Select a topic...</option>'; // Reset topics
-
-                    if (selectedCategory) {
-                        const category = localData.topics.find(cat => cat.category === selectedCategory);
-                        category.subtopics.forEach(subtopic => {
-                            let option = document.createElement("option");
-                            option.value = subtopic.name.toLowerCase().replace(/\s+/g, "_");
-                            option.textContent = subtopic.name;
-                            topicDropdown.appendChild(option);
-                        });
+                try {
+                    // Fetch topics from topics.json
+                    let jsonResponse = await fetch("topics.json");
+                    
+                    if (!jsonResponse.ok) {
+                        throw new Error(`Failed to fetch topics.json: ${jsonResponse.statusText}`);
                     }
-                });
-            } catch (error) {
-                console.error("Error fetching topics:", error);
+
+                    let localData = await jsonResponse.json();
+
+                    console.log(localData); // Debugging: log the JSON content
+
+                    // Populate category dropdown
+                    const categoryDropdown = document.getElementById("category");
+                    if (!localData.topics || localData.topics.length === 0) {
+                        throw new Error('No topics found in topics.json');
+                    }
+
+                    localData.topics.forEach(topic => {
+                        let option = document.createElement("option");
+                        option.value = topic.category;
+                        option.textContent = topic.category;
+                        categoryDropdown.appendChild(option);
+                    });
+
+                    // Event listener for category change
+                    categoryDropdown.addEventListener('change', function () {
+                        const selectedCategory = categoryDropdown.value;
+                        const topicDropdown = document.getElementById("topic");
+                        topicDropdown.innerHTML = '<option value="">Select a topic...</option>'; // Reset topics
+
+                        if (selectedCategory) {
+                            const category = localData.topics.find(cat => cat.category === selectedCategory);
+                            category.subtopics.forEach(subtopic => {
+                                let option = document.createElement("option");
+                                option.value = subtopic.name.toLowerCase().replace(/\s+/g, "_");
+                                option.textContent = subtopic.name;
+                                topicDropdown.appendChild(option);
+                            });
+                        }
+                    });
+                } catch (error) {
+                    console.error("Error fetching topics:", error);
+                    document.getElementById("result").innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+                }
             }
-        }
 
-        // Run function when page loads
-        fetchAndPopulateTopics();
-    </script>
+            // Run function when page loads
+            fetchAndPopulateTopics();
+        </script>
 
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

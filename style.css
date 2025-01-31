@@ -1,11 +1,20 @@
-/* style.css */
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background setup */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
+/* Container for centering the content */
 .container {
     max-width: 600px;
     margin: 20px auto;
@@ -15,39 +24,61 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header */
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
+/* Label styles */
 label {
     display: block;
     margin: 10px 0 5px;
+    font-size: 16px;
 }
 
+/* Input and select styling */
 input[type="text"], select {
     width: 100%;
     padding: 10px;
     margin: 5px 0 20px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    font-size: 16px;
 }
 
+/* Button styling */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #28a745;
     border: none;
     border-radius: 4px;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Button hover effect */
 button:hover {
     background-color: #218838;
 }
 
+/* Result section styling */
 #result {
     margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+/* Error handling message */
+#error {
+    color: red;
+    margin-top: 15px;
+    text-align: center;
 }
