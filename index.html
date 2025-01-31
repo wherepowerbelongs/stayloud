@@ -37,18 +37,15 @@
     <!-- Fetch Topics Script -->
     <script>
         async function fetchAndMergeTopics() {
-            const apiUrl = "https://api.propublica.org/congress/v1/bills/search.json?query=politics"; // Example API
-            const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
+            const apiUrl = "https://www.govtrack.us/api/v2/bill?order_by=-introduced_date&limit=20"; // Fetch latest 20 bills
 
             try {
-                // Fetch topics from API
-                let apiResponse = await fetch(apiUrl, {
-                    headers: { "X-API-Key": apiKey }
-                });
+                // Fetch topics from GovTrack API
+                let apiResponse = await fetch(apiUrl);
                 let apiData = await apiResponse.json();
 
-                // Extract topics from API response
-                let apiTopics = apiData.results.map(bill => bill.title);
+                // Extract topics (GovTrack bills have a "title" field)
+                let apiTopics = apiData.objects.map(bill => bill.title);
 
                 // Fetch local topics from topics.json
                 let jsonResponse = await fetch("topics.json");
