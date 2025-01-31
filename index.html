@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Representative Voting Tracker</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Track How Your Representative Voted!</h1>
+        
+        <!-- Form for user input -->
+        <form id="voting-form">
+            <label for="zipcode">Enter Your ZIP Code:</label>
+            <input type="text" id="zipcode" name="zipcode" required>
+            
+            <label for="topic">Select a Topic You Care About:</label>
+            <select id="topic">
+                <option value="abortion">Abortion</option>
+                <option value="climate_change">Climate Change</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="gun_control">Gun Control</option>
+            </select>
+
+            <label for="side">Choose Your Position:</label>
+            <select id="side">
+                <option value="pro">Pro</option>
+                <option value="against">Against</option>
+            </select>
+            
+            <button type="submit">Get Voting Record</button>
+        </form>
+
+        <div id="result">
+            <!-- This is where the voting record will be displayed -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
