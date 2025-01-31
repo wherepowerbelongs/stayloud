@@ -17,10 +17,7 @@
             
             <label for="topic">Select a Topic You Care About:</label>
             <select id="topic">
-                <option value="abortion">Abortion</option>
-                <option value="climate_change">Climate Change</option>
-                <option value="healthcare">Healthcare</option>
-                <option value="gun_control">Gun Control</option>
+                <option value="">Loading topics...</option> <!-- Placeholder while fetching -->
             </select>
 
             <label for="side">Choose Your Position:</label>
@@ -36,6 +33,50 @@
             <!-- This is where the voting record will be displayed -->
         </div>
     </div>
+
+    <!-- Fetch Topics Script -->
+    <script>
+        async function fetchAndMergeTopics() {
+            const apiUrl = "https://api.propublica.org/congress/v1/bills/search.json?query=politics"; // Example API
+            const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
+
+            try {
+                // Fetch topics from API
+                let apiResponse = await fetch(apiUrl, {
+                    headers: { "X-API-Key": apiKey }
+                });
+                let apiData = await apiResponse.json();
+
+                // Extract topics from API response
+                let apiTopics = apiData.results.map(bill => bill.title);
+
+                // Fetch local topics from topics.json
+                let jsonResponse = await fetch("topics.json");
+                let localData = await jsonResponse.json();
+                let localTopics = localData.topics;
+
+                // Merge API topics with local topics (avoid duplicates)
+                let mergedTopics = [...new Set([...localTopics, ...apiTopics])];
+
+                // Update the dropdown dynamically
+                const topicDropdown = document.getElementById("topic");
+                topicDropdown.innerHTML = ""; // Clear existing options
+
+                mergedTopics.forEach(topic => {
+                    let option = document.createElement("option");
+                    option.value = topic.toLowerCase().replace(/\s+/g, "_"); // Format value
+                    option.textContent = topic; // Display text
+                    topicDropdown.appendChild(option);
+                });
+
+            } catch (error) {
+                console.error("Error fetching topics:", error);
+            }
+        }
+
+        // Run function when page loads
+        fetchAndMergeTopics();
+    </script>
 
     <script src="script.js"></script>
 </body>
