@@ -15,9 +15,14 @@
             <label for="zipcode">Enter Your ZIP Code:</label>
             <input type="text" id="zipcode" name="zipcode" required>
             
+            <label for="category">Select a Category:</label>
+            <select id="category">
+                <option value="">Loading categories...</option> <!-- Placeholder while fetching -->
+            </select>
+
             <label for="topic">Select a Topic You Care About:</label>
             <select id="topic">
-                <option value="">Loading topics...</option> <!-- Placeholder while fetching -->
+                <option value="">Select a category first</option> <!-- Placeholder -->
             </select>
 
             <label for="side">Choose Your Position:</label>
@@ -36,43 +41,44 @@
 
     <!-- Fetch Topics Script -->
     <script>
-        async function fetchAndMergeTopics() {
-            const apiUrl = "https://www.govtrack.us/api/v2/bill?order_by=-introduced_date&limit=20"; // Fetch latest 20 bills
-
+        async function fetchAndPopulateTopics() {
             try {
-                // Fetch topics from GovTrack API
-                let apiResponse = await fetch(apiUrl);
-                let apiData = await apiResponse.json();
-
-                // Extract topics (GovTrack bills have a "title" field)
-                let apiTopics = apiData.objects.map(bill => bill.title);
-
-                // Fetch local topics from topics.json
+                // Fetch topics from topics.json
                 let jsonResponse = await fetch("topics.json");
                 let localData = await jsonResponse.json();
-                let localTopics = localData.topics;
 
-                // Merge API topics with local topics (avoid duplicates)
-                let mergedTopics = [...new Set([...localTopics, ...apiTopics])];
-
-                // Update the dropdown dynamically
-                const topicDropdown = document.getElementById("topic");
-                topicDropdown.innerHTML = ""; // Clear existing options
-
-                mergedTopics.forEach(topic => {
+                // Populate category dropdown
+                const categoryDropdown = document.getElementById("category");
+                localData.topics.forEach(topic => {
                     let option = document.createElement("option");
-                    option.value = topic.toLowerCase().replace(/\s+/g, "_"); // Format value
-                    option.textContent = topic; // Display text
-                    topicDropdown.appendChild(option);
+                    option.value = topic.category;
+                    option.textContent = topic.category;
+                    categoryDropdown.appendChild(option);
                 });
 
+                // Event listener for category change
+                categoryDropdown.addEventListener('change', function () {
+                    const selectedCategory = categoryDropdown.value;
+                    const topicDropdown = document.getElementById("topic");
+                    topicDropdown.innerHTML = '<option value="">Select a topic...</option>'; // Reset topics
+
+                    if (selectedCategory) {
+                        const category = localData.topics.find(cat => cat.category === selectedCategory);
+                        category.subtopics.forEach(subtopic => {
+                            let option = document.createElement("option");
+                            option.value = subtopic.name.toLowerCase().replace(/\s+/g, "_");
+                            option.textContent = subtopic.name;
+                            topicDropdown.appendChild(option);
+                        });
+                    }
+                });
             } catch (error) {
                 console.error("Error fetching topics:", error);
             }
         }
 
         // Run function when page loads
-        fetchAndMergeTopics();
+        fetchAndPopulateTopics();
     </script>
 
     <script src="script.js"></script>

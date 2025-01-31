@@ -1,0 +1,375 @@
+{
+    "topics": [
+      {
+        "category": "Social Issues",
+        "subtopics": [
+          {
+            "name": "Abortion",
+            "positions": [
+              "No abortion allowed at all (total ban, even in cases of rape/incest)",
+              "No abortion allowed except in cases of rape, incest, or danger to the mother",
+              "No abortion allowed after X weeks (e.g., heartbeat laws at 6 weeks, viability at ~24 weeks)",
+              "Abortion allowed anytime with some restrictions (e.g., parental consent for minors)",
+              "Abortion allowed anytime with no restrictions"
+            ]
+          },
+          {
+            "name": "LGBTQ+ Rights",
+            "positions": [
+              "Full equality, including same-sex marriage, adoption, and anti-discrimination protections",
+              "Allow civil unions but not marriage",
+              "Businesses and religious groups should be able to deny service to LGBTQ+ individuals",
+              "Ban same-sex marriage and restrict LGBTQ+ rights"
+            ]
+          },
+          {
+            "name": "Religious Freedom",
+            "positions": [
+              "Strict separation of church and state",
+              "Allow religious groups some influence but not in government policy",
+              "Businesses and individuals can refuse service based on religious beliefs",
+              "Promote Christianity or another religion in government policies"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Gun Control",
+        "subtopics": [
+          {
+            "name": "Gun Control",
+            "positions": [
+              "Ban all guns except for law enforcement and military",
+              "Ban assault weapons and high-capacity magazines",
+              "Require universal background checks, waiting periods, and stricter regulations",
+              "Some regulations but maintain Second Amendment rights (e.g., concealed carry permits)",
+              "No restrictions on gun ownership (constitutional carry, no permits required)"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Drug Policy",
+        "subtopics": [
+          {
+            "name": "Drug Policy",
+            "positions": [
+              "Fully legalize all drugs (including hard drugs)",
+              "Fully legalize marijuana, decriminalize other drugs",
+              "Decriminalize drug use but regulate it",
+              "Keep marijuana illegal but allow medical use",
+              "Keep all drugs illegal with strict enforcement"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Death Penalty",
+        "subtopics": [
+          {
+            "name": "Death Penalty",
+            "positions": [
+              "Abolish the death penalty completely",
+              "Only use the death penalty for the most severe crimes (e.g., terrorism, serial murder)",
+              "Expand the use of the death penalty for more crimes"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Healthcare & Public Health",
+        "subtopics": [
+          {
+            "name": "Healthcare System",
+            "positions": [
+              "Universal healthcare (single-payer, Medicare for All)",
+              "Public-private hybrid (Obamacare-style system)",
+              "Private insurance only (no government involvement)"
+            ]
+          },
+          {
+            "name": "Prescription Drug Prices",
+            "positions": [
+              "Government regulates and caps drug prices",
+              "Encourage competition but no price controls",
+              "No regulation on drug pricing (free market)"
+            ]
+          },
+          {
+            "name": "Pandemic Response",
+            "positions": [
+              "Strict government mandates (masks, lockdowns, vaccine requirements)",
+              "Some recommendations but personal choice",
+              "No government intervention at all"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Immigration & Border Policy",
+        "subtopics": [
+          {
+            "name": "Border Security",
+            "positions": [
+              "Open borders with minimal restrictions",
+              "Increase legal immigration but maintain border security",
+              "More surveillance and technology, but no wall",
+              "Build a physical wall and increase border security",
+              "Strict border enforcement, including mass deportations"
+            ]
+          },
+          {
+            "name": "Path to Citizenship",
+            "positions": [
+              "Offer immediate citizenship to all undocumented immigrants",
+              "Allow a pathway to citizenship with requirements (e.g., paying taxes, no crimes)",
+              "Allow legal residency but not citizenship",
+              "No pathway to citizenship; deport all undocumented immigrants"
+            ]
+          },
+          {
+            "name": "DACA & Dreamers",
+            "positions": [
+              "Provide full citizenship to DACA recipients",
+              "Allow legal residency but no citizenship",
+              "End DACA and deport recipients"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Economic & Tax Policy",
+        "subtopics": [
+          {
+            "name": "Minimum Wage",
+            "positions": [
+              "Raise to $15/hour or higher",
+              "Raise to $12-$14/hour",
+              "Keep current minimum wage",
+              "Eliminate minimum wage (let the market decide)"
+            ]
+          },
+          {
+            "name": "Taxes",
+            "positions": [
+              "Increase taxes on the wealthy and corporations",
+              "Keep taxes moderate and balanced",
+              "Cut taxes for businesses and individuals"
+            ]
+          },
+          {
+            "name": "Welfare & Social Safety Nets",
+            "positions": [
+              "Expand welfare programs and implement universal basic income",
+              "Maintain current welfare system with some reforms",
+              "Reduce welfare programs and promote work incentives",
+              "Eliminate welfare programs entirely"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Climate Change & Environmental Policy",
+        "subtopics": [
+          {
+            "name": "Renewable Energy",
+            "positions": [
+              "Invest heavily in solar, wind, and green energy",
+              "Balanced approach (some renewables, some fossil fuels)",
+              "Rely mainly on fossil fuels for economic reasons"
+            ]
+          },
+          {
+            "name": "Carbon Emissions & Regulations",
+            "positions": [
+              "Implement a carbon tax and strict environmental laws",
+              "Moderate regulations but allow industry flexibility",
+              "No regulations, let the free market decide"
+            ]
+          },
+          {
+            "name": "Nuclear Energy",
+            "positions": [
+              "Expand nuclear energy for clean power",
+              "Use it selectively with strong safety regulations",
+              "Oppose nuclear energy due to waste risks"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Education & Student Policies",
+        "subtopics": [
+          {
+            "name": "Student Loan Forgiveness",
+            "positions": [
+              "Cancel all student debt",
+              "Forgive some debt but not all",
+              "No forgiveness; personal responsibility"
+            ]
+          },
+          {
+            "name": "School Choice",
+            "positions": [
+              "Public funds for private/charter schools",
+              "Support public schools but allow some choice",
+              "Fund only public schools, no private subsidies"
+            ]
+          },
+          {
+            "name": "Curriculum & CRT",
+            "positions": [
+              "Require Critical Race Theory (CRT) in education",
+              "Allow optional teaching but not mandatory",
+              "Ban CRT in all schools"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Crime & Law Enforcement",
+        "subtopics": [
+          {
+            "name": "Police Reform",
+            "positions": [
+              "Defund/reduce police funding",
+              "Reform police without major cuts",
+              "Fully support police with no funding cuts"
+            ]
+          },
+          {
+            "name": "Mass Incarceration",
+            "positions": [
+              "Reduce sentences and focus on rehabilitation",
+              "Keep current sentencing laws",
+              "Increase prison sentences for more deterrence"
+            ]
+          },
+          {
+            "name": "Gun Violence",
+            "positions": [
+              "Strict gun control laws (bans, background checks)",
+              "Some regulations but protect Second Amendment",
+              "No restrictions on guns, full gun rights"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Technology & Data Privacy",
+        "subtopics": [
+          {
+            "name": "Big Tech Regulation",
+            "positions": [
+              "Break up large tech monopolies",
+              "Some regulation, but allow innovation",
+              "No regulation, let the market decide"
+            ]
+          },
+          {
+            "name": "Social Media & Free Speech",
+            "positions": [
+              "Platforms must regulate hate speech and misinformation",
+              "Some content moderation, but not censorship",
+              "No moderation at all, total free speech"
+            ]
+          },
+          {
+            "name": "Government Surveillance",
+            "positions": [
+              "Ban mass surveillance programs",
+              "Allow limited surveillance for security",
+              "Full government access to prevent threats"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Foreign Policy & National Security",
+        "subtopics": [
+          {
+            "name": "Military Spending",
+            "positions": [
+              "Cut military budget and focus on diplomacy",
+              "Keep current funding levels",
+              "Increase military spending for national defense"
+            ]
+          },
+          {
+            "name": "China & Russia Policy",
+            "positions": [
+              "Take a tough stance with sanctions and pressure",
+              "Engage diplomatically but cautiously",
+              "Cooperate openly for economic and political stability"
+            ]
+          },
+          {
+            "name": "Foreign Aid",
+            "positions": [
+              "Expand humanitarian aid and global support",
+              "Keep aid limited to key allies",
+              "Cut most foreign aid and focus on domestic issues"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Voting Rights & Election Policy",
+        "subtopics": [
+          {
+            "name": "Voter ID Laws",
+            "positions": [
+              "Require strict ID laws to prevent fraud",
+              "Some ID requirements, but allow alternatives",
+              "No ID laws, increase voter access"
+            ]
+          },
+          {
+            "name": "Electoral College",
+            "positions": [
+              "Abolish it and use popular vote",
+              "Keep it but make some adjustments",
+              "Fully support the current system"
+            ]
+          },
+          {
+            "name": "Mail-in Voting",
+            "positions": [
+              "Expand mail-in voting and make it easier",
+              "Allow it only for certain cases (e.g., military, disabled)",
+              "Ban mail-in voting due to fraud concerns"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Infrastructure & Transportation",
+        "subtopics": [
+          {
+            "name": "Public Transit",
+            "positions": [
+              "Expand public transportation systems nationwide",
+              "Improve existing transit but don’t expand",
+              "No funding for public transit, prioritize roads"
+            ]
+          },
+          {
+            "name": "Electric Vehicles",
+            "positions": [
+              "Government incentives for EV adoption",
+              "Support EVs but let the market decide",
+              "No subsidies for EVs, keep focus on gas cars"
+            ]
+          },
+          {
+            "name": "Broadband & Internet Access",
+            "positions": [
+              "Provide universal broadband as a public utility",
+              "Expand access but keep private industry control",
+              "No government role in internet access"
+            ]
+          }
+        ]
+      }
+    ]
+  }
